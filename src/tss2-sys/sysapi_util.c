@@ -150,6 +150,8 @@ TSS2_RC CommonOneCall(
 {
     TSS2_RC rval;
 
+    ctx->authsCount = 0;
+
     if (cmdAuthsArray) {
         rval = Tss2_Sys_SetCmdAuths((TSS2_SYS_CONTEXT *)ctx, cmdAuthsArray);
         if (rval)
